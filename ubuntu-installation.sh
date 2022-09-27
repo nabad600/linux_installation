@@ -35,7 +35,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/$compose/docke
 sudo chmod +x /usr/local/bin/docker-compose
 sudo rm -rf override.conf
 sudo setcap 'cap_net_bind_service=+eip' $HOME/DECK/deck
-sudo sh -c "echo '$HOME/DECK/' >> /etc/ld.so.conf.d/deck.conf"
+#sudo sh -c "echo '$HOME/DECK/' >> /etc/ld.so.conf.d/deck.conf"
 sudo ldconfig
 # clear
 # neofetch
