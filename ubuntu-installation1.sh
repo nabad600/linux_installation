@@ -37,5 +37,5 @@ sudo ldconfig
 echo "Reloading systemd manager configuration ...";
 sudo systemctl daemon-reload
 sudo systemctl restart docker.service
-sudo setfacl -m user:$USER:rw /var/run/docker.sock
+#sudo setfacl -m user:$USER:rw /var/run/docker.sock
 echo "Installation has finished";
