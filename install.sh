@@ -56,7 +56,7 @@ vendor=$(dpkg --print-architecture)
     sudo systemctl daemon-reload
     sudo systemctl restart docker.service
     #sudo nohup sudo -b sh -c "./bundles/binary-daemon/dockerd -D -H unix:///tmp/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
-    sudo nohup sudo -b sh -c "/usr/bin/dockerd -D -H unix:///tmp/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
+    sudo -b sh -c "/usr/bin/dockerd -D -H unix:///tmp/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
     #sudo setfacl -m user:$USER:rw /var/run/docker.sock
     echo "Installation has finished";
 #else
