@@ -47,7 +47,8 @@ vendor=$(dpkg --print-architecture)
     #sudo sh -c "echo '$HOME/DECK/' > /etc/ld.so.conf.d/deck.conf"
     sudo ldconfig
     curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | sudo bash -s -- -e all -p /usr/local
-    sudo -s & source /root/.bashrc
+    sudo -s && \
+        source /root/.bashrc
     sudo apt install -y make-guile
     sudo git clone https://github.com/rumpl/moby.git && cd moby &&  make binary
     # clear
@@ -57,7 +58,8 @@ vendor=$(dpkg --print-architecture)
     sudo systemctl restart docker.service
     sudo rm -rf /var/run/docker.pid
     #sudo nohup sudo -b sh -c "./bundles/binary-daemon/dockerd -D -H unix:///tmp/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
-    sudo -b sh -c "/usr/bin/dockerd -D -H unix:///var/run/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
+    screen && \
+        sudo -b sh -c "/usr/bin/dockerd -D -H unix:///var/run/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
     #sudo setfacl -m user:$USER:rw /var/run/docker.sock
     echo "Installation has finished";
 #else
