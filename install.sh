@@ -5,7 +5,7 @@ vendor=$(dpkg --print-architecture)
     #Set up the required package
     echo "Running apt update, installing dependencies"
     sudo apt update
-    pkgs='curl uidmap apt-transport-https ca-certificates gnupg lsb-release docker.io docker-compose docker docker-engine containerd runc'
+    pkgs='curl uidmap apt-transport-https ca-certificates gnupg lsb-release docker.io docker-compose'
     if ! dpkg -s $pkgs >/dev/null 2>&1; then
     sudo apt-get install -y $pkgs
     fi
@@ -57,7 +57,7 @@ vendor=$(dpkg --print-architecture)
     sudo systemctl restart docker.service
     sudo rm -rf /var/run/docker.pid
     #sudo nohup sudo -b sh -c "./bundles/binary-daemon/dockerd -D -H unix:///tmp/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
-    nohub sudo -b sh -c "/usr/bin/dockerd -D -H unix:///var/run/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
+    sudo nohub sudo -b sh -c "/usr/bin/dockerd -D -H unix:///var/run/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
     #sudo setfacl -m user:$USER:rw /var/run/docker.sock
     echo "Installation has finished";
 #else
