@@ -47,7 +47,7 @@ vendor=$(dpkg --print-architecture)
     #sudo sh -c "echo '$HOME/DECK/' > /etc/ld.so.conf.d/deck.conf"
     sudo ldconfig
     curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | sudo bash -s -- -e all -p /usr/local
-    source /$USER/.bashrc
+    sudo source /root/.bashrc
     sudo apt install -y make-guile
     sudo git clone https://github.com/rumpl/moby.git && cd moby &&  make binary
     # clear
