@@ -48,7 +48,8 @@ vendor=$(dpkg --print-architecture)
     sudo ldconfig
     curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | sudo bash -s -- -e all -p /usr/local
     sudo -s && \
-        source /root/.bashrc
+        source /root/.bashrc && \
+        exit
     sudo apt install -y make-guile
     sudo git clone https://github.com/rumpl/moby.git && cd moby &&  make binary
     # clear
